@@ -9,8 +9,19 @@
 </head>
 <div class="wrapper">
 <div class="color-header">
-    <div class="color-picker-box"></div>
-    <select name="colorScheme" id="colorScheme"></select>
+    <input type="color" id="seedColor">
+    <!-- 2<div class="color-picker-box"></div> -->
+    <select name="colorScheme" id="colorScheme">
+        <option value="monochrome">monochrome</option>
+        <option value="monochrome-dark">monochrome-dark</option>
+        <option value="monochrome-light">monochrome-light</option>
+        <option value="analogic">analogic</option>
+        <option value="complement">complement</option>
+        <option value="analogic-complement">analogic-complement</option>
+        <option value="triad">triad</option>
+        <option value="quad">quad</option>
+
+    </select>
     <button id="colorSchemeBtn" class="btn scheme-Btn"> get color scheme</button>
 </div>
 
