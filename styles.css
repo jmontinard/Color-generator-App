@@ -5,6 +5,7 @@
 }
 .wrapper{
  height: 100vh;
+ font-family:'Roboto', sans-serif ;
 }
 .color-header{
     padding: 0 15px;
@@ -40,6 +41,8 @@
 }
 .scheme-Btn {
     width: 15%;
+    font-size: 18px;
+    ;
 }
 .color-hex-row,
 .color-header{
@@ -67,6 +70,10 @@
     border-right: 1px solid rgba(211, 211, 211, 0.562);
 
     
+}
+.color:hover,
+.colro:focus{
+    transform: scale(1.02);
 }
 
 .color-hex-row{

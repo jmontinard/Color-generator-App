@@ -20,6 +20,40 @@ const colorText5 = document.querySelector('#hex-text-5')
 
 
 
+
+const defaultState = () =>{
+    let URL = `https://www.thecolorapi.com/scheme?hex=0047AB&mode=monochrome`
+    fetch(URL)
+    .then(res => res.json())
+    .then(data =>{
+    color1.style.backgroundColor = `${data.colors[0].hex.value}`
+    color2.style.backgroundColor = `${data.colors[1].hex.value}`
+    color3.style.backgroundColor = `${data.colors[2].hex.value}`
+    color4.style.backgroundColor = `${data.colors[3].hex.value}`
+    color5.style.backgroundColor = `${data.colors[4].hex.value}`
+    
+    colorText1.textContent = `${data.colors[0].hex.value}`
+    colorText2.textContent = `${data.colors[1].hex.value}`
+    colorText3.textContent = `${data.colors[2].hex.value}`
+    colorText4.textContent = `${data.colors[3].hex.value}`
+    colorText5.textContent = `${data.colors[4].hex.value}`
+    
+    
+        console.log(data) 
+    
+    
+    })
+    .catch(err => console.log(err))
+
+
+}
+
+
+
+
+
+
+
 colorSchemeBtn.addEventListener('click', ()=>{
     const hexColor = seedColor.value.substring(1)
     const colorScheme = document.querySelector('#colorScheme').value
@@ -46,7 +80,7 @@ colorSchemeBtn.addEventListener('click', ()=>{
     
     
     })
-    // .catch(err => console.log(err))
+    .catch(err => console.log(err))
 
 
 })
