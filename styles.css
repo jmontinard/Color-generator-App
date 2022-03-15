@@ -3,3 +3,82 @@
     padding:0 ;
     box-sizing: border-box;
 }
+.wrapper{
+ height: 100vh;
+}
+.color-header{
+    padding: 0 15px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+ #seedColor,
+ #colorScheme,
+ .scheme-Btn{
+     border-radius: 8px;
+     outline: none
+    
+     /* border: none; */
+ }
+
+
+#colorScheme,
+.scheme-Btn{
+    padding: 8px;
+
+}
+
+#seedColor{
+    width: 10%;
+    height:40px;
+}
+#colorScheme{
+  width: 60%;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+}
+.scheme-Btn {
+    width: 15%;
+}
+.color-hex-row,
+.color-header{
+    height: 10vh;
+}
+
+
+.color-header,
+.color-row-box,
+.color-hex-row{
+    /* border: 1px solid rgb(255, 0, 0); */
+}
+
+.color-row-box{
+   height: 80vh;
+    /* height: 600px; */
+    display: flex;
+    /* justify-content: s; */
+}
+
+.color{
+    width: 20%;
+    /* border: 1px solid rgb(252, 0, 0); */
+    border-left: 1px solid rgba(211, 211, 211, 0.562);
+    border-right: 1px solid rgba(211, 211, 211, 0.562);
+
+    
+}
+
+.color-hex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+
+}
+
+.hex{
+    border: 1px solid rgb(252, 0, 0);
+    width: 20%;
+    text-align: center;
+}
