@@ -10,14 +10,16 @@ const color3 = document.querySelector('#color3')
 const color4 = document.querySelector('#color4')
 const color5 = document.querySelector('#color5')
 
+// const colorArray = Array.from(document.querySelectorAll('.color'))
+const colorArray = document.querySelectorAll('.color')
+
+console.log(colorArray)
 
 const colorText1 = document.querySelector('#hex-text-1')
 const colorText2 = document.querySelector('#hex-text-2')
 const colorText3 = document.querySelector('#hex-text-3')
 const colorText4 = document.querySelector('#hex-text-4')
 const colorText5 = document.querySelector('#hex-text-5')
-
-
 
 
 
@@ -48,6 +50,22 @@ const defaultState = () =>{
 
 }
 
+
+ function copyColor() {
+    document.execCommand("copy");
+  }
+
+colorArray.forEach((color,index) =>{
+    
+    color.addEventListener("copy", (event) => {
+      event.preventDefault();
+      if (event.clipboardData) {
+        event.clipboardData.setData("text/plain", colorText[index+1].textContent);
+        console.log(event.clipboardData.getData("text"))
+      }
+    });
+})  
+  
 
 
 
