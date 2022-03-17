@@ -14,6 +14,7 @@ const color5 = document.querySelector('#color5')
 const colorArray = document.querySelectorAll('.color')
 
 console.log(colorArray)
+// add in copy code
 
 const colorText1 = document.querySelector('#hex-text-1')
 const colorText2 = document.querySelector('#hex-text-2')
