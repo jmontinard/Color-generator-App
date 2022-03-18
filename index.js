@@ -13,8 +13,10 @@ const color5 = document.querySelector('#color5')
 // const colorArray = Array.from(document.querySelectorAll('.color'))
 const colorArray = document.querySelectorAll('.color')
 
-console.log(colorArray)
+// console.log(colorArray)
 // add in copy code
+const colorTextArr = document.querySelectorAll('.hex')
+
 
 const colorText1 = document.querySelector('#hex-text-1')
 const colorText2 = document.querySelector('#hex-text-2')
@@ -52,24 +54,46 @@ const defaultState = () =>{
 }
 
 
- function copyColor() {
+const copyColor = () =>{
     document.execCommand("copy");
   }
 
-colorArray.forEach((color,index) =>{
+
+const copyColorLogic = () =>{
+   
+
+    // console.log(colorTextArr)
     
-    color.addEventListener("copy", (event) => {
-      event.preventDefault();
-      if (event.clipboardData) {
-        event.clipboardData.setData("text/plain", colorText[index+1].textContent);
-        console.log(event.clipboardData.getData("text"))
-      }
-    });
-})  
+    colorArray.forEach((color,index) =>{
+       
+        color.addEventListener("copy", (e) => {
+          e.preventDefault();
+          if (event.clipboardData) {
+            e.clipboardData.setData("text/plain", colorTextArr[index].textContent);
+            console.log(e.clipboardData.getData("text"))
+          }
+        });
+    })  
+}
   
 
+const copyHexLogic = () =>{
+colorTextArr.forEach(hexText =>{
+    hexText.addEventListener("copy", (e) => {
+        e.preventDefault();
+        if (e.clipboardData) {
+          e.clipboardData.setData("text/plain", hexText.textContent);
+          console.log(e.clipboardData.getData("text"))
+        }
+      });
+})
+}
+
+copyColorLogic()
+copyHexLogic()
 
 
+// 
 
 
 
