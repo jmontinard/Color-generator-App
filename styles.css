@@ -7,12 +7,24 @@
  height: 100vh;
  font-family:'Roboto', sans-serif ;
 }
+
+
 .color-header{
     padding: 0 15px;
  display: flex;
  justify-content: space-between;
  align-items: center;
 }
+
+.color-header,
+.color-hex-row{
+    /* background: #abbaab;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to left, #ffffff, #abbaab);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to left, #ffffff, #abbaab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    
+}
+
+
  #seedColor,
  #colorScheme,
  .scheme-Btn{
@@ -41,8 +53,9 @@
 }
 .scheme-Btn {
     width: 15%;
-    font-size: 18px;
-    ;
+    font-size: 17px;
+  text-transform: capitalize;
+    
 }
 .color-hex-row,
 .color-header{
@@ -83,6 +96,7 @@
     /* height: 200px; */
 
 }
+
 
 .hex{
     border: 1px solid rgb(252, 0, 0);
