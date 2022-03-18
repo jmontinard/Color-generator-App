@@ -93,7 +93,21 @@ copyColorLogic()
 copyHexLogic()
 
 
-// 
+// mouse and touch events hex code to apear on color block 
+
+const colorHexHoverLogic = () =>{
+    colorArray.forEach((color, index) =>{
+        color.addEventListener('mouseover', ()=> color.textContent = colorTextArr[index].textContent)
+
+        color.addEventListener('mouseout', ()=> color.textContent= '')
+    })}
+
+//  add in touch logic 
+
+colorHexHoverLogic()
+
+// add in dark mode 
+
 
 
 
@@ -128,5 +142,33 @@ colorSchemeBtn.addEventListener('click', ()=>{
 
 })
 
+// @media screen and(prefers-color-scheme: light){
 
+// }
 
+// @media screen and (prefers-color-scheme: light) {
+//     body {  
+//       background-color: white;
+//       color: black;  
+//     }
+      
+//     .dark-mode {
+//       background-color: black;
+//       color: white;
+//     }
+//   }
+//   .smooth-transition {
+//     transition: background-color 300ms;
+//   }
+
+//   @media screen and (prefers-color-scheme: dark) {
+//     .dark-mode {
+//       background-color: white;
+//       color: black;
+//     }
+    
+//     body {  
+//       background-color: black;
+//       color: white;  
+//     }
+//   }
