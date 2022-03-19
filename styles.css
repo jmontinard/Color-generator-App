@@ -7,24 +7,16 @@
 :root{
     --bg: #FCFCFC;
 }
-
 body {
     background-color: var(--bg);
   }
-
-
 .wrapper{
  height: 100vh;
- /* font-family:'Roboto', sans-serif ;
- font-size: 17px; */
 }
-
 .wrapper * {
     font-family:'Roboto', sans-serif ;
  font-size: 17px;
 }
-
-
 .color-header{
     padding: 0 15px;
  display: flex;
@@ -32,29 +24,18 @@ body {
  align-items: center;
 }
 
-.color-header,
-.color-hex-row{
-    /* background: #abbaab;  /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to left, #ffffff, #abbaab);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to left, #ffffff, #abbaab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
-    
-}
-
-
  #seedColor,
  #colorScheme,
  .scheme-Btn{
      border-radius: 8px;
      outline: none
-    
-     /* border: none; */
  }
-
 
 #colorScheme,
 .scheme-Btn{
     padding: 8px;
-
+    outline: none;
+    border: 1px solid;
 }
 
 #seedColor{
@@ -67,70 +48,50 @@ body {
 #colorScheme{
   width: 60%;
   text-transform: uppercase;
-  /* font-size: 18px; */
   text-align: center;
 }
 .scheme-Btn {
     width: 15%;
-    /* font-size: 17px; */
   text-transform: capitalize;
-    
 }
 .color-hex-row,
 .color-header{
     height: 10vh;
 }
-
-
 .color-header,
 .color-row-box,
 .color-hex-row{
     /* border: 1px solid rgb(255, 0, 0); */
 }
-
 .color-row-box{
    height: 80vh;
-    /* height: 600px; */
     display: flex;
-    /* justify-content: s; */
 }
-
 .color{
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgba(211, 211, 211, 0.493);
-
     width: 20%;
-    /* border: 1px solid rgb(252, 0, 0); */
-    
     border-left: 1px solid rgba(211, 211, 211, 0.562);
     border-right: 1px solid rgb(211, 211, 211);
-
-    
 }
 .color:hover,
 .colro:focus{
     transform: scale(1.02);
 }
-
 .color-hex-row{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 200px; */
-
 }
-
-
 .hex{
-    /* border: 1px solid rgb(252, 0, 0); */
-    
     width: 20%;
     text-align: center;
 }
 
  /* Dark mode css */
+ /* https://www.cssscript.com/dark-mode-theme/ */
  input[type=checkbox]{
     height: 0;
     width: 0;
@@ -144,6 +105,7 @@ body {
     background: grey;
     float: right;
     border-radius: 100px;
+    
     position: relative;
   }
   label::after{

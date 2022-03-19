@@ -155,7 +155,7 @@ const initialColors = {
   bg: getStyle(html, "--bg"),
 }
 const darkMode = {
-  bg: "#333333", // override styles here
+  bg: "#1f2937", // override styles here
 }
 const transformKey = key => 
   "--" + key.replace(/([A-Z])/, "-$1").toLowerCase();
@@ -164,9 +164,29 @@ const changeColors = (colors) => {
     html.style.setProperty(transformKey(key), colors[key]) 
   );
 }
-checkbox.addEventListener("change", ({target}) => {
-    target.checked ? changeColors(darkMode) : changeColors(initialColors);
-});
+
+const darkModeSwitcherLogic = () =>{
+    const colorScheme = document.querySelector('#colorScheme')
+    const hexTextArr = document.querySelectorAll('.hex')
+    checkbox.addEventListener("change", (
+        
+        
+        {target}) => {
+        target.checked ? changeColors(darkMode) : changeColors(initialColors);
+
+        target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+
+        target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
+        
+        target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
+
+        target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
+
+        target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
+    
+       
+    });
+}
 const isExistLocalStorage = (key) => 
   localStorage.getItem(key) != null;
 const createOrEditLocalStorage = (key, value) => 
@@ -191,3 +211,5 @@ if (getValeuLocalStorage('mode') === "initialColors") {
   checkbox.setAttribute('checked', "");
   changeColors(darkMode);
 }
+
+darkModeSwitcherLogic()
