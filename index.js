@@ -205,9 +205,7 @@ const darkModeSwitcherLogic = (target) =>{
 
     }
 
-    checkbox.addEventListener("change", ({target}) => {
-      darkModeSwitcherLogic(target)
-    });
+    checkbox.addEventListener("change", ({target}) => darkModeSwitcherLogic());
 
 const isExistLocalStorage = (key) => 
   localStorage.getItem(key) != null;
@@ -215,29 +213,29 @@ const createOrEditLocalStorage = (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
 const getValeuLocalStorage = (key) =>
   JSON.parse(localStorage.getItem(key));
-// checkbox.addEventListener("change", ({target}) => {
+checkbox.addEventListener("change", ({target}) => {
 
-// // darkModeSwitcherLogic(target)
-//   if (target.checked) {
-//     // changeColors(darkMode);
+// darkModeSwitcherLogic(target)
+  if (target.checked) {
+    // changeColors(darkMode);
    
    
-//     createOrEditLocalStorage('mode','darkMode');
-//   } else {
-//     // changeColors(initialColors);
+    createOrEditLocalStorage('mode','darkMode');
+  } else {
+    // changeColors(initialColors);
    
 
-//     createOrEditLocalStorage('mode','initialColors');
-//   }
-// })
-// if(!isExistLocalStorage('mode'))
-//   createOrEditLocalStorage('mode', 'initialColors');
-// if (getValeuLocalStorage('mode') === "initialColors") {
-//   checkbox.removeAttribute('checked');
-//   changeColors(initialColors);
-// } else {
-//   checkbox.setAttribute('checked', "");
-//   changeColors(darkMode);
-// }
+    createOrEditLocalStorage('mode','initialColors');
+  }
+})
+if(!isExistLocalStorage('mode'))
+  createOrEditLocalStorage('mode', 'initialColors');
+if (getValeuLocalStorage('mode') === "initialColors") {
+  checkbox.removeAttribute('checked');
+  changeColors(initialColors);
+} else {
+  checkbox.setAttribute('checked', "");
+  changeColors(darkMode);
+}
 
-// darkModeSwitcherLogic()
+darkModeSwitcherLogic()
