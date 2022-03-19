@@ -41,9 +41,14 @@ body {
 #seedColor{
     width: 10%;
     height:40px;
-    outline: none;
+    /* outline: none;
     border: none;
-    border-color: transparent;
+    border-color: transparent; */
+}
+/* make this work to get rid of that uglyyyy border  */
+::-webkit-color-swatch,
+::-moz-color-swatch {
+  border-color: transparent;
 }
 #colorScheme{
   width: 60%;
