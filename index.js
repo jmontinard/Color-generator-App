@@ -165,47 +165,49 @@ const changeColors = (colors) => {
   );
 }
 
-const darkModeSwitcherLogic = () =>{
-    const colorScheme = document.querySelector('#colorScheme')
-    const hexTextArr = document.querySelectorAll('.hex')
-    checkbox.addEventListener("change", (
+// const darkModeSwitcherLogic = () =>{
+//     const colorScheme = document.querySelector('#colorScheme')
+//     const hexTextArr = document.querySelectorAll('.hex')
+//     checkbox.addEventListener("change", (
         
         
-        {target}) => {
-        target.checked ? changeColors(darkMode) : changeColors(initialColors);
+//         {target}) => {
+//         target.checked ? changeColors(darkMode) : changeColors(initialColors);
 
-        target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+//         target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
 
-        target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
+//         target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
         
-        target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
+//         target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
 
-        target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
+//         target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
 
-        target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
-    
+//         target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
+//             console.log(target)
        
-    });
-}
+//     });
+// }
 
 
 
-// const darkModeSwitcherLogic = (target) =>{
-//         const colorScheme = document.querySelector('#colorScheme')
+const darkModeSwitcherLogic = (target) =>{
+        const colorScheme = document.querySelector('#colorScheme')
 
-//              target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+             target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
     
-//             target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
+            target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
             
-//             target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
+            target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
     
-//             target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
+            target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
     
-//             target.checked ? colorTextArr.forEach(hex => hex.style.color = "#FCFCFC") : colorTextArr.forEach(hex => hex.style.color = "#1f2937")
+            target.checked ? colorTextArr.forEach(hex => hex.style.color = "#FCFCFC") : colorTextArr.forEach(hex => hex.style.color = "#1f2937")
 
-//     }
+    }
 
-//     checkbox.addEventListener("change", darkModeSwitcherLogic({target}));
+    checkbox.addEventListener("change", ({target}) => {
+      darkModeSwitcherLogic(target)
+    });
 
 const isExistLocalStorage = (key) => 
   localStorage.getItem(key) != null;
@@ -213,23 +215,29 @@ const createOrEditLocalStorage = (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
 const getValeuLocalStorage = (key) =>
   JSON.parse(localStorage.getItem(key));
-checkbox.addEventListener("change", ({target}) => {
-  if (target.checked) {
-    changeColors(darkMode);
-    createOrEditLocalStorage('mode','darkMode');
-  } else {
-    changeColors(initialColors);
-    createOrEditLocalStorage('mode','initialColors');
-  }
-})
-if(!isExistLocalStorage('mode'))
-  createOrEditLocalStorage('mode', 'initialColors');
-if (getValeuLocalStorage('mode') === "initialColors") {
-  checkbox.removeAttribute('checked');
-  changeColors(initialColors);
-} else {
-  checkbox.setAttribute('checked', "");
-  changeColors(darkMode);
-}
+// checkbox.addEventListener("change", ({target}) => {
 
-darkModeSwitcherLogic()
+// // darkModeSwitcherLogic(target)
+//   if (target.checked) {
+//     // changeColors(darkMode);
+   
+   
+//     createOrEditLocalStorage('mode','darkMode');
+//   } else {
+//     // changeColors(initialColors);
+   
+
+//     createOrEditLocalStorage('mode','initialColors');
+//   }
+// })
+// if(!isExistLocalStorage('mode'))
+//   createOrEditLocalStorage('mode', 'initialColors');
+// if (getValeuLocalStorage('mode') === "initialColors") {
+//   checkbox.removeAttribute('checked');
+//   changeColors(initialColors);
+// } else {
+//   checkbox.setAttribute('checked', "");
+//   changeColors(darkMode);
+// }
+
+// darkModeSwitcherLogic()
