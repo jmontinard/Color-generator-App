@@ -3,7 +3,7 @@ const seedColor = document.querySelector('#seedColor')
 
 const colorSchemeBtn = document.querySelector('#colorSchemeBtn')
 // const colorScheme = document.querySelector('#colorScheme').value
-
+const colorSchemeID = document.querySelector('#colorScheme')
 const color1 = document.querySelector('#color1')
 const color2 = document.querySelector('#color2')
 const color3 = document.querySelector('#color3')
@@ -152,10 +152,23 @@ const getStyle = (element, style) =>
     .getComputedStyle(element)
     .getPropertyValue(style);
 const initialColors = {
-  bg: getStyle(html, "--bg"),
+//   bg: getStyle(html, "--bg"),
+  bg: '#FCFCFC'
+  
 }
 const darkMode = {
   bg: "#1f2937", // override styles here
+  colorChange: () => {
+      colorSchemeID.style.backgroundColor = "#1f2937";
+      colorSchemeID.style.color = "#FCFCFC" 
+      colorSchemeBtn.style.backgroundColor = "#1f2937"; 
+      colorSchemeBtn.style.color = "#FCFCFC";
+      colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
+  }
+  
+
+
+
 }
 const transformKey = key => 
   "--" + key.replace(/([A-Z])/, "-$1").toLowerCase();
@@ -165,47 +178,47 @@ const changeColors = (colors) => {
   );
 }
 
-// const darkModeSwitcherLogic = () =>{
-//     const colorScheme = document.querySelector('#colorScheme')
-//     const hexTextArr = document.querySelectorAll('.hex')
-//     checkbox.addEventListener("change", (
+const darkModeSwitcherLogic = () =>{
+    const colorScheme = document.querySelector('#colorScheme')
+    const hexTextArr = document.querySelectorAll('.hex')
+    checkbox.addEventListener("change", (
         
         
-//         {target}) => {
-//         target.checked ? changeColors(darkMode) : changeColors(initialColors);
+        {target}) => {
+        target.checked ? changeColors(darkMode) : changeColors(initialColors);
 
-//         target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+        // target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
 
-//         target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
+        // target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
         
-//         target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
+        // target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
 
-//         target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
+        // target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
 
-//         target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
-//             console.log(target)
+        // target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
+        //     console.log(target)
        
-//     });
-// }
+    });
+}
 
 
 
-const darkModeSwitcherLogic = (target) =>{
-        const colorScheme = document.querySelector('#colorScheme')
+// const darkModeSwitcherLogic = (target) =>{
+//         const colorScheme = document.querySelector('#colorScheme')
 
-             target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+//              target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
     
-            target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
+//             target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
             
-            target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
+//             target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
     
-            target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
+//             target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
     
-            target.checked ? colorTextArr.forEach(hex => hex.style.color = "#FCFCFC") : colorTextArr.forEach(hex => hex.style.color = "#1f2937")
+//             target.checked ? colorTextArr.forEach(hex => hex.style.color = "#FCFCFC") : colorTextArr.forEach(hex => hex.style.color = "#1f2937")
 
-    }
+//     }
 
-    checkbox.addEventListener("change", ({target}) => darkModeSwitcherLogic());
+//     checkbox.addEventListener("change", ({target}) => darkModeSwitcherLogic());
 
 const isExistLocalStorage = (key) => 
   localStorage.getItem(key) != null;
@@ -217,7 +230,7 @@ checkbox.addEventListener("change", ({target}) => {
 
 // darkModeSwitcherLogic(target)
   if (target.checked) {
-    // changeColors(darkMode);
+  
    
    
     createOrEditLocalStorage('mode','darkMode');
@@ -236,6 +249,7 @@ if (getValeuLocalStorage('mode') === "initialColors") {
 } else {
   checkbox.setAttribute('checked', "");
   changeColors(darkMode);
+ 
 }
 
 darkModeSwitcherLogic()
