@@ -165,54 +165,47 @@ const changeColors = (colors) => {
   );
 }
 
-// const darkModeSwitcherLogic = () =>{
-//     const colorScheme = document.querySelector('#colorScheme')
-//     const hexTextArr = document.querySelectorAll('.hex')
-//     checkbox.addEventListener("change", (
+const darkModeSwitcherLogic = () =>{
+    const colorScheme = document.querySelector('#colorScheme')
+    const hexTextArr = document.querySelectorAll('.hex')
+    checkbox.addEventListener("change", (
         
         
-//         {target}) => {
-//         target.checked ? changeColors(darkMode) : changeColors(initialColors);
+        {target}) => {
+        target.checked ? changeColors(darkMode) : changeColors(initialColors);
 
-//         target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+        target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
 
-//         target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
+        target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
         
-//         target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
+        target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
 
-//         target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
+        target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
 
-//         target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
+        target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
     
        
-//     });
-// }
+    });
+}
 
 
 
-const darkModeSwitcherLogic = (target) =>{
-        const colorScheme = document.querySelector('#colorScheme')
-        const hexTextArr = document.querySelectorAll('.hex')
-        // checkbox.addEventListener("change", (
+// const darkModeSwitcherLogic = (target) =>{
+//         const colorScheme = document.querySelector('#colorScheme')
+
+//              target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+    
+//             target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
             
-            
-        //     {target}) => {
-        //     target.checked ? changeColors(darkMode) : changeColors(initialColors);
+//             target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
     
-        //     target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
+//             target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
     
-        //     target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
-            
-        //     target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
-    
-        //     target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
-    
-        //     target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
-        
-           
-        // });
-    }
+//             target.checked ? colorTextArr.forEach(hex => hex.style.color = "#FCFCFC") : colorTextArr.forEach(hex => hex.style.color = "#1f2937")
 
+//     }
+
+//     checkbox.addEventListener("change", darkModeSwitcherLogic({target}));
 
 const isExistLocalStorage = (key) => 
   localStorage.getItem(key) != null;
