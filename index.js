@@ -166,6 +166,8 @@ const darkMode = {
       colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
   }
   
+//   get this working 
+// this is something to work on 
 
 
 
