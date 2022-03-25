@@ -172,6 +172,29 @@ const darkMode = {
 
 
 }
+
+
+
+const colorChange = () => {
+    colorSchemeID.style.backgroundColor = "#1f2937";
+    colorSchemeID.style.color = "#FCFCFC" 
+    colorSchemeBtn.style.backgroundColor = "#1f2937"; 
+    colorSchemeBtn.style.color = "#FCFCFC";
+    colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
+    document.body.style = '#1f2937'
+}
+// SWITCH THIS AROUND THEN FINISH 
+const colorChangelIGHT = () => {
+    colorSchemeID.style.backgroundColor = "#1f2937";
+    colorSchemeID.style.color = "#FCFCFC" 
+    colorSchemeBtn.style.backgroundColor = "#1f2937"; 
+    colorSchemeBtn.style.color = "#FCFCFC";
+    colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
+    document.body.style = '#1f2937'
+}
+
+// console.log(colorChange())
+
 const transformKey = key => 
   "--" + key.replace(/([A-Z])/, "-$1").toLowerCase();
 const changeColors = (colors) => {
@@ -187,7 +210,9 @@ const darkModeSwitcherLogic = () =>{
         
         
         {target}) => {
-        target.checked ? changeColors(darkMode) : changeColors(initialColors);
+
+            colorChange()
+        // target.checked ? changeColors(darkMode.colorChange()) : changeColor(initialColors);
 
         // target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
 
