@@ -175,22 +175,22 @@ const darkMode = {
 
 
 
-const colorChange = () => {
+const colorChangeDark = () => {
     colorSchemeID.style.backgroundColor = "#1f2937";
     colorSchemeID.style.color = "#FCFCFC" 
     colorSchemeBtn.style.backgroundColor = "#1f2937"; 
     colorSchemeBtn.style.color = "#FCFCFC";
     colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
-    document.body.style = '#1f2937'
+    document.body.style.backgroundColor = '#1f2937'
 }
 // SWITCH THIS AROUND THEN FINISH 
-const colorChangelIGHT = () => {
-    colorSchemeID.style.backgroundColor = "#1f2937";
+const colorChangeLight = () => {
+    colorSchemeID.style.backgroundColor = "#FCFCFC";
     colorSchemeID.style.color = "#FCFCFC" 
     colorSchemeBtn.style.backgroundColor = "#1f2937"; 
-    colorSchemeBtn.style.color = "#FCFCFC";
+    colorSchemeBtn.style.color = "#1f2937";
     colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
-    document.body.style = '#1f2937'
+    document.body.style.backgroundColor = '#FCFCFC'
 }
 
 // console.log(colorChange())
@@ -210,8 +210,8 @@ const darkModeSwitcherLogic = () =>{
         
         
         {target}) => {
-
-            colorChange()
+target.checked ? colorChangeDark() : colorChangeLight();
+            // colorChangeDark()
         // target.checked ? changeColors(darkMode.colorChange()) : changeColor(initialColors);
 
         // target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
@@ -247,36 +247,36 @@ const darkModeSwitcherLogic = () =>{
 
 //     checkbox.addEventListener("change", ({target}) => darkModeSwitcherLogic());
 
-const isExistLocalStorage = (key) => 
-  localStorage.getItem(key) != null;
-const createOrEditLocalStorage = (key, value) => 
-  localStorage.setItem(key, JSON.stringify(value));
-const getValeuLocalStorage = (key) =>
-  JSON.parse(localStorage.getItem(key));
-checkbox.addEventListener("change", ({target}) => {
+// const isExistLocalStorage = (key) => 
+//   localStorage.getItem(key) != null;
+// const createOrEditLocalStorage = (key, value) => 
+//   localStorage.setItem(key, JSON.stringify(value));
+// const getValeuLocalStorage = (key) =>
+//   JSON.parse(localStorage.getItem(key));
+// checkbox.addEventListener("change", ({target}) => {
 
-// darkModeSwitcherLogic(target)
-  if (target.checked) {
+// // darkModeSwitcherLogic(target)
+//   if (target.checked) {
   
    
    
-    createOrEditLocalStorage('mode','darkMode');
-  } else {
-    // changeColors(initialColors);
+//     createOrEditLocalStorage('mode','darkMode');
+//   } else {
+//     // changeColors(initialColors);
    
 
-    createOrEditLocalStorage('mode','initialColors');
-  }
-})
-if(!isExistLocalStorage('mode'))
-  createOrEditLocalStorage('mode', 'initialColors');
-if (getValeuLocalStorage('mode') === "initialColors") {
-  checkbox.removeAttribute('checked');
-  changeColors(initialColors);
-} else {
-  checkbox.setAttribute('checked', "");
-  changeColors(darkMode);
+//     createOrEditLocalStorage('mode','initialColors');
+//   }
+// })
+// if(!isExistLocalStorage('mode'))
+//   createOrEditLocalStorage('mode', 'initialColors');
+// if (getValeuLocalStorage('mode') === "initialColors") {
+//   checkbox.removeAttribute('checked');
+//   changeColors(initialColors);
+// } else {
+//   checkbox.setAttribute('checked', "");
+//   changeColors(darkMode);
  
-}
+// }
 
 darkModeSwitcherLogic()
