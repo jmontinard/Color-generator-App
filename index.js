@@ -239,9 +239,14 @@ checkbox.addEventListener("change", ({target}) => {
     createOrEditLocalStorage('mode','lightMode');
   }
 })
+
+
+
+
+
 if(!isExistLocalStorage('mode'))
-  createOrEditLocalStorage('mode', 'ligthMode');
-if (getValeuLocalStorage('mode') === "ligthMode") {
+  createOrEditLocalStorage('mode', 'lightMode');
+if (getValeuLocalStorage('mode') === "lightMode") {
   checkbox.removeAttribute('checked');
   colorChangeLight();
 } else {
