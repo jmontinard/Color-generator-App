@@ -23,7 +23,10 @@ body {
  justify-content: space-between;
  align-items: center;
 }
-
+#colorScheme,
+.hex {
+    color: #1f2937;
+}
  #seedColor,
  #colorScheme,
  .scheme-Btn{
@@ -58,7 +61,17 @@ body {
 .scheme-Btn {
     width: 15%;
   text-transform: capitalize;
+ 
+  background-color: #1f2937;
+  color: #FCFCFC;
 }
+/* Figure out hover state may have to do this is js */
+/* #colorSchemeBtn:hover,
+#colorSchemeBtn:focus {
+    background-color: #1f2937d5;
+    
+} */
+
 .color-hex-row,
 .color-header{
     height: 10vh;

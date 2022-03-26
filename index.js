@@ -178,18 +178,18 @@ const darkMode = {
 const colorChangeDark = () => {
     colorSchemeID.style.backgroundColor = "#1f2937";
     colorSchemeID.style.color = "#FCFCFC" 
-    colorSchemeBtn.style.backgroundColor = "#1f2937"; 
-    colorSchemeBtn.style.color = "#FCFCFC";
+
+    // change all accents to light grey for dark mode no white 
+    // colorSchemeBtn.style.backgroundColor = "#1f2937"; 
+    // colorSchemeBtn.style.color = "#FCFCFC";
     colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
     document.body.style.backgroundColor = '#1f2937'
 }
 // SWITCH THIS AROUND THEN FINISH 
 const colorChangeLight = () => {
     colorSchemeID.style.backgroundColor = "#FCFCFC";
-    colorSchemeID.style.color = "#FCFCFC" 
-    colorSchemeBtn.style.backgroundColor = "#1f2937"; 
-    colorSchemeBtn.style.color = "#1f2937";
-    colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
+    colorSchemeID.style.color = "#000" 
+    colorTextArr.forEach(hex => hex.style.color = "#000")
     document.body.style.backgroundColor = '#FCFCFC'
 }
 
@@ -211,72 +211,42 @@ const darkModeSwitcherLogic = () =>{
         
         {target}) => {
 target.checked ? colorChangeDark() : colorChangeLight();
-            // colorChangeDark()
-        // target.checked ? changeColors(darkMode.colorChange()) : changeColor(initialColors);
-
-        // target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
-
-        // target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
-        
-        // target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
-
-        // target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
-
-        // target.checked ? hexTextArr.forEach(hex => hex.style.color = "#FCFCFC") : hexTextArr.forEach(hex => hex.style.color = "#1f2937")
-        //     console.log(target)
        
     });
 }
+darkModeSwitcherLogic()
 
 
 
-// const darkModeSwitcherLogic = (target) =>{
-//         const colorScheme = document.querySelector('#colorScheme')
+const isExistLocalStorage = (key) => 
+  localStorage.getItem(key) != null;
+const createOrEditLocalStorage = (key, value) => 
+  localStorage.setItem(key, JSON.stringify(value));
+const getValeuLocalStorage = (key) =>
+  JSON.parse(localStorage.getItem(key));
+checkbox.addEventListener("change", ({target}) => {
 
-//              target.checked ? colorScheme.style.backgroundColor = "#1f2937"  : colorScheme.style.backgroundColor = "#FCFCFC";
-    
-//             target.checked ? colorScheme.style.color = "#FCFCFC"  : colorScheme.style.color = "#1f2937";
-            
-//             target.checked ? colorSchemeBtn.style.backgroundColor = "#1f2937"   : colorSchemeBtn.style.backgroundColor = "#FCFCFC";
-    
-//             target.checked ? colorSchemeBtn.style.color = "#FCFCFC"  : colorSchemeBtn.style.color = "#000000";
-    
-//             target.checked ? colorTextArr.forEach(hex => hex.style.color = "#FCFCFC") : colorTextArr.forEach(hex => hex.style.color = "#1f2937")
-
-//     }
-
-//     checkbox.addEventListener("change", ({target}) => darkModeSwitcherLogic());
-
-// const isExistLocalStorage = (key) => 
-//   localStorage.getItem(key) != null;
-// const createOrEditLocalStorage = (key, value) => 
-//   localStorage.setItem(key, JSON.stringify(value));
-// const getValeuLocalStorage = (key) =>
-//   JSON.parse(localStorage.getItem(key));
-// checkbox.addEventListener("change", ({target}) => {
-
-// // darkModeSwitcherLogic(target)
-//   if (target.checked) {
+// darkModeSwitcherLogic(target)
+  if (target.checked) {
   
    
    
-//     createOrEditLocalStorage('mode','darkMode');
-//   } else {
-//     // changeColors(initialColors);
+    createOrEditLocalStorage('mode','darkMode');
+  } else {
+    // changeColors(initialColors);
    
 
-//     createOrEditLocalStorage('mode','initialColors');
-//   }
-// })
-// if(!isExistLocalStorage('mode'))
-//   createOrEditLocalStorage('mode', 'initialColors');
-// if (getValeuLocalStorage('mode') === "initialColors") {
-//   checkbox.removeAttribute('checked');
-//   changeColors(initialColors);
-// } else {
-//   checkbox.setAttribute('checked', "");
-//   changeColors(darkMode);
+    createOrEditLocalStorage('mode','lightMode');
+  }
+})
+if(!isExistLocalStorage('mode'))
+  createOrEditLocalStorage('mode', 'ligthMode');
+if (getValeuLocalStorage('mode') === "ligthMode") {
+  checkbox.removeAttribute('checked');
+  colorChangeLight();
+} else {
+  checkbox.setAttribute('checked', "");
+ colorChangeDark();
  
-// }
+}
 
-darkModeSwitcherLogic()
