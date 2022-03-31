@@ -169,7 +169,7 @@ const darkMode = {
 //   get this working 
 // this is something to work on 
 // this tooo jj jsjsjs hvjfjyf
-//hgjhgjh
+//hgjhgjh add last touches 
 
 
 }
