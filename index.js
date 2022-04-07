@@ -170,7 +170,7 @@ const darkMode = {
 // this is something to work on 
 // this tooo jj jsjsjs hvjfjyf
 //hgjhgjh add last touches kaska ny
-// kanye west akslnkansalksdskldskkdlfkddlkwkwlekw
+// kanye west akslnkansalksdskldskkdlfkddlkwkwlekwklklkl
 }
 
 
