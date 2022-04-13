@@ -44,9 +44,6 @@ body {
 #seedColor{
     width: 10%;
     height:40px;
-    /* outline: none;
-    border: none;
-    border-color: transparent; */
 }
 /* make this work to get rid of that uglyyyy border  */
 ::-webkit-color-swatch,
@@ -65,17 +62,17 @@ body {
   background-color: #1f2937;
   color: #FCFCFC;
 }
-/* Figure out hover state may have to do this is js */
-/* #colorSchemeBtn:hover,
-#colorSchemeBtn:focus {
-    background-color: #1f2937d5;
-    
-} */
+.scheme-Btn:hover,
+.scheme-Btn:focus {
+  background-color: #748ed1a9;
+  transition: all 0.3s;
+}
 
 .color-hex-row,
 .color-header{
     height: 10vh;
 }
+
 .color-header,
 .color-row-box,
 .color-hex-row{
