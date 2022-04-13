@@ -73,11 +73,6 @@ body {
     height: 10vh;
 }
 
-.color-header,
-.color-row-box,
-.color-hex-row{
-    /* border: 1px solid rgb(255, 0, 0); */
-}
 .color-row-box{
    height: 80vh;
     display: flex;

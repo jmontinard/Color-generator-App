@@ -104,46 +104,22 @@ colorSchemeBtn.addEventListener('click', ()=>{
 //Dark mode 
 const html = document.querySelector("html")
 const checkbox = document.querySelector("input[name=theme]")
-// const getStyle = (element, style) => 
-//   window
-//     .getComputedStyle(element)
-//     .getPropertyValue(style);
-// const initialColors = {
-// //   bg: getStyle(html, "--bg"),
-//   bg: '#FCFCFC'
-  
-// }
-// const darkMode = {
-//   bg: "#1f2937", // override styles here
-//   colorChange: () => {
-//       colorSchemeID.style.backgroundColor = "#1f2937";
-//       colorSchemeID.style.color = "#FCFCFC" 
-//       colorSchemeBtn.style.backgroundColor = "#1f2937"; 
-//       colorSchemeBtn.style.color = "#FCFCFC";
-//       colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
-//   }
-// }
-
-
 const colorChangeDark = () => {
     colorSchemeID.style.backgroundColor = "#1f2937";
     colorSchemeID.style.color = "#FCFCFC" 
-
     // change all accents to light grey for dark mode no white 
     // colorSchemeBtn.style.backgroundColor = "#1f2937"; 
     // colorSchemeBtn.style.color = "#FCFCFC";
     colorTextArr.forEach(hex => hex.style.color = "#FCFCFC")
     document.body.style.backgroundColor = '#1f2937'
 }
-// SWITCH THIS AROUND THEN FINISH 
+
 const colorChangeLight = () => {
     colorSchemeID.style.backgroundColor = "#FCFCFC";
     colorSchemeID.style.color = "#000" 
     colorTextArr.forEach(hex => hex.style.color = "#000")
     document.body.style.backgroundColor = '#FCFCFC'
 }
-
-
 // const transformKey = key => 
 //   "--" + key.replace(/([A-Z])/, "-$1").toLowerCase();
 // const changeColors = (colors) => {
@@ -164,8 +140,6 @@ target.checked ? colorChangeDark() : colorChangeLight();
     });
 }
 darkModeSwitcherLogic()
-
-
 
 const isExistLocalStorage = (key) => 
   localStorage.getItem(key) != null;
