@@ -51,7 +51,7 @@ const copyColorLogic = () =>{
         });
     })  
 }
-  // this is it hhththh
+  // this is where we will add in some new logic 
 
 const copyHexLogic = () =>{
 colorTextArr.forEach(hexText =>{
